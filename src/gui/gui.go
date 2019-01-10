@@ -16,7 +16,7 @@ import (
 	bootstrap "github.com/asticode/go-astilectron-bootstrap"
 	"github.com/google/uuid"
 	"github.com/sirupsen/logrus"
-	"github.com/stellitecoin/gui-miner/src/gui/miner"
+	"github.com/LetheanMovement/lethean-gui-miner/src/gui/miner"
 )
 
 // GUI implements the core control for the GUI miner
