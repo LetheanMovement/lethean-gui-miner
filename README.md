@@ -1,20 +1,17 @@
 ![](git-assets/miner-logo.png)
 
-#  Stellite GUI Miner
+#  Lethean GUI Miner
 
-The Stellite GUI miner is a beautiful, easy to use, interface for mining Stellite.
-It is aimed at getting people that have never mined Stellite into the crypto
-game by making it really simple to get started.
+The Lethean GUI miner is a beautiful, easy to use, interface for mining Lethean.
 
-![Screenshot](https://i.imgur.com/ruK7z4Y.png "Screenshot")
+The goal of this software is to allow easy mining of Lethean coins, allowing simple and affordable access to the Lethean VPN Network.
+
+![Screenshot](https://i.imgur.com/DrOmgtk.png "Screenshot")
 
 We currently support two very popular miner backends:
 
-1. [xtl-stak](https://github.com/stellitecoin/xtl-stak)
-2. [xtlrig](https://github.com/stellitecoin/xtlrig) (note: [xmrig-nvidia](https://github.com/xmrig/xmrig-nvidia) and [xmrig-amd](https://github.com/xmrig/xmrig-amd) does not support our v4 proof-of-work algorithm yet)
-
-If you'd like to fork this miner for you own coin, please see the __forking__
-section later.
+1. [xmr-stak](https://github.com/fireice-uk/xmr-stak)
+2. [xmrig](https://github.com/xmrig/xmrig) (see also [xmrig-nvidia](https://github.com/xmrig/xmrig-nvidia) and [xmrig-amd](https://github.com/xmrig/xmrig-amd))
 
 ## Compiling
 
@@ -42,8 +39,8 @@ go get -u github.com/mitchellh/go-ps
 * Clone and build the app
 
 ```shell
-git clone git@github.com:stellitecoin/gui-miner.git stellite/gui-miner
-cd stellite/gui-miner
+git clone git@github.com:LetheanMovement/lethean-gui-miner.git lethean/gui-miner
+cd lethean/gui-miner
 make
 ```
 
@@ -51,11 +48,8 @@ NOTE: Ensure you clone the GUI miner into your working $GOPATH
 
 If all goes well the binaries for Windows, macOS and Linux will be available in the `bin` folder.
 
-## Forking
+Building is also possible on Windows by executing `astilectron-bundler -v` from the `src` folder, assuming $GOPATH is setup correctly.
 
-In the spirit of open source we'll be making it really simple to fork and
-brand the miner for your own coin. Some structural changes need to be made to
-simplify the process. Subscribe to issue [#3][i3] to follow the progress on this
-guide.
+## Credit
 
-[i3]: https://github.com/stellitecoin/gui-miner/issues/3
+The original source for this GUI miner comes from [Stellite](https://github.com/stellitecoin/GUI-miner).
