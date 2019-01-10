@@ -66,7 +66,7 @@ func NewXmrStak(config Config) (*XmrStak, error) {
 	miner := XmrStak{
 		// We've switched to our own miner in V4, xtl-stak, but I'm keeping
 		// everything else xmr-stak for clarity
-		name:     "xtl-stak",
+		name:     "xmr-stak",
 		endpoint: endpoint,
 	}
 	miner.Base.executableName = filepath.Base(config.Path)
@@ -395,6 +395,7 @@ func (miner *XmrStak) defaultConfig() string {
 // buildPoolConfig returns the XmrStak pool config to be written to file
 // xmr-stak uses a JSON format that doesn't have a compatible Go
 // parser which is why I'm doing this as text or templates
+// xmr-stak still refers to Lethean as Intense
 func (miner *XmrStak) buildPoolConfig(
 	poolEndpoint string,
 	walletAddress string) string {
@@ -402,9 +403,9 @@ func (miner *XmrStak) buildPoolConfig(
 	return `
 "pool_list" :
 [
-	{"pool_address" : "` + poolEndpoint + `", "wallet_address" : "` + walletAddress + `", "rig_id" : "", "pool_password" : "Stellite GUI Miner", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
+	{"pool_address" : "` + poolEndpoint + `", "wallet_address" : "` + walletAddress + `", "rig_id" : "", "pool_password" : "Lethean GUI Miner", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
 ],
-"currency" : "stellite",
+"currency" : "cryptonight_v8",
 		`
 }
 

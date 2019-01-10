@@ -138,7 +138,7 @@ func NewXmrig(config Config) (*Xmrig, error) {
 	miner := Xmrig{
 		// We've switched to our own miner in V4, xtlrig, but I'm keeping
 		// everything else xmrig for clarity
-		name:     "xtlrig",
+		name:     "xmrig",
 		endpoint: endpoint,
 	}
 	// xmrig appends either nvidia or amd to the miner if it's GPU only
@@ -337,10 +337,10 @@ func (miner *Xmrig) createConfig(
 			{
 				URL:       poolEndpoint,
 				User:      walletAddress,
-				Pass:      "Stellite GUI Miner",
+				Pass:      "Lethean GUI Miner",
 				Keepalive: true,
 				Nicehash:  false,
-				Variant:   "xtl",
+				Variant:   "2",
 			},
 		},
 		API: XmrigAPIConfig{
@@ -376,10 +376,10 @@ func (miner *Xmrig) createGPUConfig(
 			{
 				URL:       poolEndpoint,
 				User:      walletAddress,
-				Pass:      "Stellite GUI Miner",
+				Pass:      "Lethean GUI Miner",
 				Keepalive: true,
 				Nicehash:  false,
-				Variant:   "xtl",
+				Variant:   "2",
 			},
 		},
 		API: XmrigAPIConfig{
