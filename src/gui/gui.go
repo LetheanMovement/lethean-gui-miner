@@ -158,7 +158,7 @@ func New(
 	// Setting the WithFields now will ensure all log entries from this point
 	// includes the fields
 	gui.logger = logrus.WithFields(logrus.Fields{
-		"service": "stellite-gui-miner",
+		"service": "lethean-gui-miner",
 	})
 
 	gui.astilectronOptions = bootstrap.Options{
@@ -571,7 +571,7 @@ func (gui *GUI) updateMiningStatsLoop() {
 		} else {
 			if gui.lastHashrate == 0 && stats.Hashrate > 0 {
 				gui.lastHashrate = stats.Hashrate
-				// The first time we get a hashrate, update the XTL amount so that the
+				// The first time we get a hashrate, update the LTHN amount so that the
 				// user doesn't think it doesn't work
 				gui.updateNetworkStats()
 			}

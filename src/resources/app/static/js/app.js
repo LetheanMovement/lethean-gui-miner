@@ -65,7 +65,7 @@ let app = {
           $('#trading_crex_volume').html(parsed.volume_crex + ' BTC');
           $('#record_volume').html(parsed.records.volume + ' BTC');
           $('#record_price').html(parsed.records.price + ' BTC');
-          $('#miner_payout').html(parsed.xtl_per_day + ' XTL');
+          $('#miner_payout').html(parsed.coins_per_day + ' LTHN');
           $('#pool').html(parsed.pool_html);
           break;
         case "miner_stats":
@@ -185,7 +185,7 @@ let app = {
       // invalid ones
       if (shared.validateWalletAddress(configData.address) == false)
       {
-        alert("Please enter a valid Stellite address starting with 'Se'");
+        alert("Please enter a valid Lethean address starting with 'iz'");
         return false;
       }
 
@@ -212,16 +212,16 @@ let app = {
         $('#max_threads_multiple').hide();
       } else $('#max_threads_multiple').show();
 
-      if (parsed.type == 'xtlrig') {
+      if (parsed.type == 'xmrig') {
         $('.xmrig-extra').show();
       } else $('.xmrig-extra').hide();
 
       // For xmrig's GPU only setup we don't show the CPU tuning options
-      if (parsed.type != "xtlrig-gpu") {
+      if (parsed.type != "xmrig-gpu") {
         // TODO: Do this in a better way, i.e - not as text
         var threadOptions = "<select>";
         var startThreadCount = 1;
-        if (parsed.type == 'xtl-stak') {
+        if (parsed.type == 'xmr-stak') {
           startThreadCount = 0;
         }
         for (var i = startThreadCount; i <= parsed.max_threads; i++) {
@@ -261,7 +261,7 @@ let app = {
     $('#miner_difficulty').html('0');
     $('#miner_shares').html('0');
     $('#miner_shares_bad').html('0');
-    $('#miner_payout').html('0.00 XTL');
+    $('#miner_payout').html('0.00 LTHN');
   },
   setupChart: function() {
     var chart = $("#hashrate_chart");
